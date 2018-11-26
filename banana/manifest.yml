@@ -1,0 +1,7 @@
+---
+applications:
+- name: banana
+  memory: 1G
+  random-route: true
+  path: build/libs/banana-0.0.1-SNAPSHOT.jar
+  instances: 2

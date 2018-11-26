@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: caller
+
+server:
+  port: ${PORT}
+
+eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]}
+    prefer-ip-address: true
+    ip-address: ${CF_INSTANCE_INTERNAL_IP}
+    non-secure-port: ${PORT}
+  client:
+    serviceUrl:
+      defaultZone: ${vcap.services.eureka-server.credentials.uri}
+    
+ribbon:
+  ServerListRefreshInterval: 1000
+ 

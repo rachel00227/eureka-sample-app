@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: caller
+
+server:
+  port: 8888
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:pw@localhost:8761/eureka/  
+
+ribbon:
+   ServerListRefreshInterval: 1000

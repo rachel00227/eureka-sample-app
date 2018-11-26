@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Error page</title>
+	<meta charset="utf-8" />
+	
+	<!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    
+    <!-- Custom styles for this template -->
+	<link href="../static/css/3-col-portfolio.css" th:href="@{/css/3-col-portfolio.css}" rel="stylesheet" />
+</head>
+<body>
+	<p th:if="${status}">
+		<b>Response Status: </b><span th:text="${status}">status-code</span> 
+	</p>
+
+	<p th:unless="${errorMessage}">
+		Cause unknown (no exception details available)
+	</p>
+
+	<p th:if="${errorMessage}">
+		<b>Caused by: </b><span th:text="${errorMessage}">Error java.lang.NullPointerException</span> 
+	</p>
+	
+	<p>
+		You are seeing this error page due to Spring Boot (which returns a
+		view called "error" in response to uncaught exceptions. Since we are
+		using Thymeleaf this corresponds to the template
+		<code>error.html</code>
+		)
+	</p>
+</body>
+<!-- <body th:with="httpStatus=${T(org.springframework.http.HttpStatus).valueOf(#response.status)}"> 
+        <h1 th:text="|${httpStatus} - ${httpStatus.reasonPhrase}|">404</h1>
+        <p th:utext="${errorMessage}">Error java.lang.NullPointerException</p>
+        <a href="index.html" th:href="@{/index.html}">Back to Home Page</a>
+</body> -->
+</html>

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: BANANA
+
+server:
+  port: 9090
+  
+instance:
+  index: 9090  
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:pw@localhost:8761/eureka/  

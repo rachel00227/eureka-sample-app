@@ -1,0 +1,7 @@
+---
+applications:
+- name: caller
+  memory: 1G
+  random-route: true
+  path: build/libs/caller-0.0.1-SNAPSHOT.jar
+  instances: 1
